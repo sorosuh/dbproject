@@ -13,11 +13,16 @@ session_start();
 <body>
     <div style="width: 100%; height: 100px; background-color: aquamarine; ">
         <span style="text-align: center; font-size: 25px; margin-top: 20px; float:left; margin-left:700px; color:rgb(125,33,79);"><strong>داشبورد</strong></span>
+<<<<<<< HEAD
         <span style="text-align: center; font-size: 25px; margin-top: 20px; float:right;margin-top:-10px;"><a href="index.php">خروج</a></span>
         <span style="folat:left;"><?php echo $_SESSION["name"]  ?></span>
         <span>:نام <?php echo $_SESSION["role"]  ?> </span>
     </div>
 
 
+=======
+        <span style="text-align: center; font-size: 25px; margin-top: 20px; float:right;"><a href="index.php">خروج</a></span>
+    </div>
+>>>>>>> 85f009374cc9343e42c43dc17b834baa42f8361b
 </body>
 </html>
