@@ -8,6 +8,7 @@
     $search->execute([$user]);
 
     $orgPass= $search->fetch(PDO::FETCH_ASSOC)['pass'];
+    $search->execute([$user]);
     $role= $search->fetch(PDO::FETCH_ASSOC)['roleUser'];
 
     if($pass== $orgPass && isset($pass)){
