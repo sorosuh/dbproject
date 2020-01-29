@@ -21,7 +21,7 @@
         $number= $_POST["number"];
         $Xcoordinates= $_POST["Xcoordinates"];
         $Ycoordinates= $_POST["Ycoordinates"];
-        $qis= $_POST["qid"];
+        $qid= $_POST["qid"];
         $answer= $_POST["answer"];
 
         addToUsers($user, $pass, 2);
