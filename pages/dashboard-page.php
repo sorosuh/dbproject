@@ -1,6 +1,5 @@
 <?php
 session_start();
-include 'connect.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,27 +18,12 @@ include 'connect.php';
         <span>نام :<?php echo $_SESSION["name"]  ?> </span>
     </div>
 
-    <?php 
-        if($_SESSION["role"] == 1){
-            echo '<p style="margin-left:1300px;">حساب ادمین</p>';
-        }
-
-        if($_SESSION["role"]==2){
-            echo '<p style="margin-left:1300px;">حساب رستوران</p>';
-        }
-
-        if($_SESSION["role"] == 3){
-            echo '<p style="margin-left:1300px;">حساب خیریه</p>';
-        }
-
-        if($_SESSION["role"] == 4){
-            echo '<p style="margin-left:1300px;">حساب راننده</p>';
-        }
-    ?>
+    <?php echo $_SESSION["role"]; ?>
 
     <?php 
-              //  if($_SESSION["role"] == 2){
-                  //  echo '<p style="margin-left:1300px;">حساب رستوران</p>';
+                
+                if($_SESSION["role"] == 2){
+                    echo '<p style="margin-left:1300px;">حساب رستوران</p>';
                 
 
                 echo '<form action="" method="" style="float:right;">
@@ -56,13 +40,14 @@ include 'connect.php';
                     <lable>تعداد غذای باقیمانده</lable>
                      </form>';
 
-              //  }
+                }
 
 
                 if($_SESSION["role"] == 3){
                     echo '<p style="margin-left:1300px;">حساب راننده</p>';
                 
-                    echo 'وضعیت راننده :'.$status;
+                    echo 'وضعیت راننده :'.$_SESSION['status'];
+                    echo 'تغییر وضعیت : ';
                 }
     ?>
 
