@@ -1,5 +1,13 @@
 <?php
     include 'connect.php';
+    include 'addFunction.php';
+
+    $pass= $_POST["pass"];
+    $passValid= FALSE;
+    if( strlen($pass)< 8);
+    //     for($i= 0; i<=)
+
+    // }
 
     if(isset($_POST["user"]) && isset($_POST["city"]) && isset($_POST["regionID"]) && isset($_POST["street"]) && 
         isset($_POST["number"]) && isset($_POST["Xcoordinates"]) && isset($_POST["Ycoordinates"]) && 
@@ -17,8 +25,6 @@
         $answer= $_POST["answer"];
 
         
-    
-
 
     }
 
