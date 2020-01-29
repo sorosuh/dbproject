@@ -1,5 +1,5 @@
 <?php
-
+    session_start();
     include 'connect.php';
     $user= $_POST['user'];
     $pass= $_POST['pass'];
@@ -12,7 +12,8 @@
 
     if($pass== $orgPass){
         
-        echo "success";
+        $_SESSION["name"]=$user;
+         $_SESSION["role"]=$role;
         header("Location: ../pages/dashboard-page.php"); 
     }
     else{
