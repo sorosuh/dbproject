@@ -32,7 +32,7 @@
         addToUsers($user, $pass, 2);
         addToQuestionUser($user, $qid, $answer);
         
-        $sql= "INSERT INTO restaurants(user,name,nationalNumber,regioID,Xcoordinates,Ycoordinates,DateOfBirth,carTag,carColor,status) VALUES (?,?,?,?,?,?,?,?,?,?)";
+        $sql= "INSERT INTO drivers(user,name,nationalNumber,regioID,Xcoordinates,Ycoordinates,DateOfBirth,carTag,carColor,status) VALUES (?,?,?,?,?,?,?,?,?,?)";
         $create= $connect->prepare($sql);
         $create->execute([$user,$name,$nationalNumber,$regionID,$Xcoordinates,$Ycoordinates,$DateOfBirth,$carTag,$carColor,$status]);
 
