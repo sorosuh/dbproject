@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,16 +13,11 @@
 <body>
     <div style="width: 100%; height: 100px; background-color: aquamarine; ">
         <span style="text-align: center; font-size: 25px; margin-top: 20px; float:left; margin-left:700px; color:rgb(125,33,79);"><strong>داشبورد</strong></span>
-        <span style="text-align: center; font-size: 25px; margin-top: 20px; float:right;"><a href="index.php">خروج</a></span>
-        <p><?php $_SESSION["name"]  ?></p>
-        <p><?php $_SESSION["role"]  ?></p>
+        <span style="text-align: center; font-size: 25px; margin-top: 20px; float:right;margin-top:-10px;"><a href="index.php">خروج</a></span>
+        <span style="folat:left;"><?php echo $_SESSION["name"]  ?></span>
+        <span>:نام <?php echo $_SESSION["role"]  ?> </span>
     </div>
 
-    <?php 
-        if($role==0){
 
-        }
-    
-    ?>
 </body>
 </html>
