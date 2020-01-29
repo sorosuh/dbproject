@@ -10,7 +10,7 @@
     $orgPass= $search->fetch(PDO::FETCH_ASSOC)['pass'];
     $role= $search->fetch(PDO::FETCH_ASSOC)['roleUser'];
 
-    if($pass== $orgPass){
+    if($pass== $orgPass && isset($pass)){
         
         $_SESSION["name"]=$user;
          $_SESSION["roleUser"]=$role;
