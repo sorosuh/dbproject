@@ -11,6 +11,7 @@
     $role= $search->fetch(PDO::FETCH_ASSOC)['role'];
 
     if($pass== $orgPass){
+        
         echo "success";
         header("Location: ../pages/dashboard-page.php"); 
     }
