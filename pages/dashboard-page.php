@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once '../backend/getCharity.php';
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="rtl">
@@ -31,13 +32,16 @@ session_start();
                       <thead>
                         <tr>
                         <th>نام خیریه</th>
+                        <th>شهر</th>
                           <th>ثبت قرارداد</th>
                         </tr>
                       </thead>
                       <tbody>';
-                            foreach ($charities as $charitiy) {
+                            foreach ($arr as $a) {
                                 echo '<tr>';
-                                echo '<td>'.$charitiy->name.'</td>';
+                                echo '<td>'. $a['user'].'</td>';
+                                echo '<td>'. $a['city'].'</td>';
+                                echo '<form><input type="checkbox" name="" "> </form>';
                                 echo '</tr>';
                             }
                     echo'  </tbody>
