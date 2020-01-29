@@ -22,31 +22,40 @@ require_once '../backend/getCharity.php';
     <?php echo $_SESSION["role"]; ?>
 
     <?php 
+
+                
                 
                 if($_SESSION["roleUser"] == 2){
                     echo '<p style="margin-left:1300px;">حساب رستوران</p>';
                 
                     echo'<p style="text-align:right;">ثبت قرارداد</p>';
-                    echo'  <div class="table-responsive">          
-                    <table class="table col-md-5" style="margin-left:350px; ">
-                      <thead>
-                        <tr>
-                        <th>نام خیریه</th>
-                        <th>شهر</th>
-                          <th>ثبت قرارداد</th>
-                        </tr>
-                      </thead>
-                      <tbody>';
-                            foreach ($arr as $a) {
-                                echo '<tr>';
-                                echo '<td>'. $a['user'].'</td>';
-                                echo '<td>'. $a['city'].'</td>';
-                                echo '<form><input type="checkbox" name="" "> </form>';
-                                echo '</tr>';
-                            }
-                    echo'  </tbody>
-                    </table>
-                    </div>';
+                    
+                    echo'<table class="table table-striped table-responsive-md btn-table">
+
+                <thead>
+                  <tr>
+                  
+                  <th>نام خیریه</th>
+                  <th>شهر</th>
+                  <th>ثبت قرارداد</th>
+                  </tr>
+                </thead>';
+                foreach ($arr as $a) {
+                    echo '<form action="" method="POST" name="charity-list" style="text-align:">';
+                    echo '<tr>';
+                    echo '<td>'. $a['user'].'</td>';
+                    echo '<td>'. $a['city'].'</td>';
+                    echo '<td>
+                    <button type="button" class="btn btn-outline-primary btn-sm m-0 waves-effect">ثبت</button>
+                    </td> </form>';
+                    echo '</tr>';
+                }
+              
+                echo '<tbody>
+                </tbody>
+              
+              </table>';
+
 
 
                 // echo '<form action="" method="" style="float:right;">
