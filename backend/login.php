@@ -4,7 +4,7 @@
     //@authot mohammad
     $user= $_POST['user'];
     $pass= $_POST['pass'];
-
+    echo 11111;
     $query= "SELECT pass,role FROM users WHERE user=?";
     $search= $connect->prepare($query);
     $search->execute([$user]);
