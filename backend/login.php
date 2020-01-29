@@ -3,17 +3,21 @@
     include 'connect.php';
     $user= $_POST['user'];
     $pass= $_POST['pass'];
-    $query= "SELECT pass,roleUser FROM users WHERE user=?";
+
+    $query= "SELECT pass FROM users WHERE user=?";
     $search= $connect->prepare($query);
     $search->execute([$user]);
+    $orgPass= $search->fetch(PDO::FETCH_ASSOC)['pass'];
 
-    $result= $search->fetch(PDO::FETCH_ASSOC);
+    if($pass== $orgPass && isset($pass)){
     
+        $query= "SELECT roleUser FROM users WHERE user=?";
+        $search= $connect->prepare($query);
+        $search->execute([$user]);
+        $role= $search->fetch(PDO::FETCH_ASSOC)['roleUser'];
 
-    if($result['pass']== $orgPass && isset($pass)){
-        
         $_SESSION["name"]=$user;
-         $_SESSION["roleUser"]=$result['roleUser'];
+         $_SESSION["roleUser"]=$role;
         header("Location: ../pages/dashboard-page.php"); 
     }
     else{
