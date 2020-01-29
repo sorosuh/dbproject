@@ -9,10 +9,12 @@
         $user= $_POST["user"];
         if(!isUniqueUser($user)){
             // user is Repetitious (tekrarie)
+            echo 'tekrari';
         }
         $pass= $_POST["pass"];
         if(passValid($pass)){
             // pass not valid
+            echo 'pass not valid';
         }
 
         $city= $_POST["city"];
@@ -29,8 +31,10 @@
         
         $sql= "INSERT INTO charities(user,city,regioID,street,number,Xcoordinates,Ycoordinates) VALUES (?,?,?,?,?,?,?)";
         $create= $connect->prepare($sql);
-        $create->execute([$user, $city, $regionID, $street, $number, $Xcoordinates, $Ycoordinates]);
+     echo $create->execute([$user, $city, $regionID, $street, $number, $Xcoordinates, $Ycoordinates]);
 
+    }else{
+        header('location:../../dbproject/pages/index.php');
     }
 
 ?>
