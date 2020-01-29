@@ -32,5 +32,6 @@
         $create->execute([$user, $city, $regionID, $street, $number, $Xcoordinates, $Ycoordinates]);
 
     }
+    
 
 ?>
