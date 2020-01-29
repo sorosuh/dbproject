@@ -2,7 +2,7 @@
 session_start();
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,28 +22,47 @@ session_start();
 
     <?php 
                 
-                if($_SESSION["role"] == 2){
+                if($_SESSION["roleUser"] == 2){
                     echo '<p style="margin-left:1300px;">حساب رستوران</p>';
                 
+                    echo'<p style="text-align:right;">ثبت قرارداد</p>';
+                    echo'  <div class="table-responsive">          
+                    <table class="table col-md-5" style="margin-left:350px; ">
+                      <thead>
+                        <tr>
+                        <th>نام خیریه</th>
+                          <th>ثبت قرارداد</th>
+                        </tr>
+                      </thead>
+                      <tbody>';
+                            foreach ($charities as $charitiy) {
+                                echo '<tr>';
+                                echo '<td>'.$charitiy->name.'</td>';
+                                echo '</tr>';
+                            }
+                    echo'  </tbody>
+                    </table>
+                    </div>';
 
-                echo '<form action="" method="" style="float:right;">
-                        <input type="submit" value="ثبت"/>
-                        <input type="text">
-                        <lable>ثبت خیریه</lable>
-                    </form>';
 
-                echo '<br/>';echo '<br/>';
+                // echo '<form action="" method="" style="float:right;">
+                //         <input type="submit" value="ثبت"/>
+                //         <input type="text">
+                //         <lable>ثبت خیریه</lable>
+                //     </form>';
 
-                echo'<form action="" method="" style="float:right;">
-                    <input type="submit" value="ثبت"/>
-                    <input type="text">
-                    <lable>تعداد غذای باقیمانده</lable>
-                     </form>';
+                // echo '<br/>';echo '<br/>';
+
+                // echo'<form action="" method="" style="float:right;">
+                //     <input type="submit" value="ثبت"/>
+                //     <input type="text">
+                //     <lable>تعداد غذای باقیمانده</lable>
+                //      </form>';
 
                 }
 
 
-               // if($_SESSION["role"] == 3){
+                if($_SESSION["roleUser"] == 4){
                     echo '<p style="margin-left:1300px;">حساب راننده</p>';
                 
                   //  echo 'وضعیت راننده :'.$_SESSION['status'];
@@ -64,7 +83,7 @@ session_start();
                   <input type="submit" value="ثبت">
                   
                   </form>';
-               // }
+                }
     ?>
 
 
