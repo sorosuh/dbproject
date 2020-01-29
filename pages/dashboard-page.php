@@ -43,12 +43,28 @@ session_start();
                 }
 
 
-                if($_SESSION["role"] == 3){
+               // if($_SESSION["role"] == 3){
                     echo '<p style="margin-left:1300px;">حساب راننده</p>';
                 
-                    echo 'وضعیت راننده :'.$_SESSION['status'];
-                    echo 'تغییر وضعیت : ';
-                }
+                  //  echo 'وضعیت راننده :'.$_SESSION['status'];
+                    echo 'تغییر وضعیت :
+                    <form action="" method="post">
+                    <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="status" id="inlineRadio1" value="option1">
+                    <label class="form-check-label" for="inlineRadio1">اماده به خدمت</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                    <label class="form-check-label" for="inlineRadio2">درحال خدمت</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                    <label class="form-check-label" for="inlineRadio2">عدم دسترسی</label>
+                  </div>
+                  <input type="submit" value="ثبت">
+                  
+                  </form>';
+               // }
     ?>
 
 

@@ -7,13 +7,15 @@
     $search= $connect->prepare($query);
     $search->execute([$user]);
 
-    $orgPass= $search->fetch(PDO::FETCH_ASSOC)['pass'];
-    $role= $search->fetch(PDO::FETCH_ASSOC)['roleUser'];
+    $result= $search->fetch(PDO::FETCH_ASSOC);
+    
 
-    if($pass== $orgPass){
-        
-      $_SESSION["name"]=$user;
-      $_SESSION["role"]=$role;
+
+    if($result['pass']== $pass && isset($pass)){
+
+        $_SESSION["name"]=$user;
+         $_SESSION["roleUser"]=$result['roleUser'];
+
         header("Location: ../pages/dashboard-page.php"); 
     }
     else{

@@ -7,11 +7,14 @@
         $create->execute([$user, $pass, $role]);
     }
 
-    // function addToQuestionUser(){
-    //     include 
-    // }
+    function addToQuestionUser($user, $qid, $answer){
+        include 'connect.php';
+        $sql= "INSERT INTO question-userHide (user, qid, answer) VALUES (?,?,?)";
+        $create= $connect->prepare($sql);
+        $create->execute([$user, $qid, $answer]);
+     }
 
-
+     
 
 
 ?>
