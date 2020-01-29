@@ -1,10 +1,10 @@
 <?php
-
+    session_start();
     include 'connect.php';
-    //@authot mohammad
+    
     $user= $_POST['user'];
     $pass= $_POST['pass'];
-    echo 11111;
+    
     $query= "SELECT pass,role FROM users WHERE user=?";
     $search= $connect->prepare($query);
     $search->execute([$user]);
@@ -13,7 +13,8 @@
     $role= $search->fetch(PDO::FETCH_ASSOC)['role'];
 
     if($pass== $orgPass){
-        echo "success";
+        $_SESSION["name"] = $user;
+        $_SESSION["role"] = $role;
         header("Location: ../pages/dashboard-page.php"); 
     }
     else{

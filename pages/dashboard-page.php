@@ -11,6 +11,15 @@
     <div style="width: 100%; height: 100px; background-color: aquamarine; ">
         <span style="text-align: center; font-size: 25px; margin-top: 20px; float:left; margin-left:700px; color:rgb(125,33,79);"><strong>داشبورد</strong></span>
         <span style="text-align: center; font-size: 25px; margin-top: 20px; float:right;"><a href="index.php">خروج</a></span>
+        <p><?php $_SESSION["name"]  ?></p>
+        <p><?php $_SESSION["role"]  ?></p>
     </div>
+
+    <?php 
+        if($role==0){
+
+        }
+    
+    ?>
 </body>
 </html>
