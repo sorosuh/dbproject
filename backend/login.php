@@ -1,7 +1,7 @@
 <?php
 
     include 'connect.php';
-    
+    //@authot mohammad
     $user= $_POST['user'];
     $pass= $_POST['pass'];
 
