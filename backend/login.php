@@ -18,6 +18,7 @@
 
         $_SESSION["name"]=$user;
          $_SESSION["roleUser"]=$role;
+
         header("Location: ../pages/dashboard-page.php"); 
     }
     else{

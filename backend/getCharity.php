@@ -6,7 +6,8 @@
     $search->execute();
     $arr= $search->fetchAll(PDO::FETCH_ASSOC);
 
+    return $arr;
     $json = json_encode($arr);
-    echo $json;
+    return $json;
 
 ?>
