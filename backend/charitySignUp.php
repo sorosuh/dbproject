@@ -24,10 +24,10 @@
         $qis= $_POST["qid"];
         $answer= $_POST["answer"];
 
-        addToUsers($user, $pass, 2);
+        addToUsers($user, $pass, 3);
         addToQuestionUser($user, $qid, $answer);
         
-        $sql= "INSERT INTO restaurants(user,city,regioID,street,number,Xcoordinates,Ycoordinates) VALUES (?,?,?,?,?,?,?)";
+        $sql= "INSERT INTO charities(user,city,regioID,street,number,Xcoordinates,Ycoordinates) VALUES (?,?,?,?,?,?,?)";
         $create= $connect->prepare($sql);
         $create->execute([$user, $city, $regionID, $street, $number, $Xcoordinates, $Ycoordinates]);
 
