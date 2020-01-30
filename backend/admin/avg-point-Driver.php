@@ -2,7 +2,6 @@
 
 include 'connect.php';
 
-$driver = $_POST['driver'];
-$sql = "SELECT driverUser  FROM points WHERE driverUser = $driver AND AVG(point) > 4 ";
+$sql = "SELECT driverUser  FROM points GROUP BY driveruser HAVING AVG(point)> 4 FROM points";
 return $sql;
 ?>

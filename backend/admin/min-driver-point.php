@@ -2,7 +2,7 @@
 include 'connect.php';
 
 $driver = $_POST['driver'];
-$sql = "SELECT driverUser  FROM points WHERE driverUser = $driver AND min(point) ";
+$sql = "SELECT MIN(point)  FROM points WHERE driverUser = $driver";
 return $sql;
 
 ?>
